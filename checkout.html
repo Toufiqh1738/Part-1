@@ -7,143 +7,237 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Header-->
-    <header>
-        <h1></h1>
-        <!--NavBar-->
-     <div id="navbar">
-        <div id="header-logo">
-            <img src="Images/logo.jpg" alt="logo" class="logo">
-        </div>
-             <a href="index.html">Home Page</a>
-             <a href="Aboutus.html">About Us</a>
-             <a href="Products.html">Products</a>
-             <a href="Enquiry.html">Enquiry</a>
-             <a href="contactus.html">Contact</a> 
-             <a href="checkout.html">CART</a>
-             <input type="text" placeholder="Search..">   
-     </div>
-    </header>
-
-    <!--Main-->
-    <main>
-      <div class="row">
-  <div class="col-75">
-    <div class="container">
-      <form action="/action_page.php">
-
-        <div class="row">
-          <div class="col-50">
-            <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
-
-            <div class="row">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-50">
-            <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
-        <input type="submit" value="Continue to checkout" class="btn">
-      </form>
+   <!---- HEADER ---->
+<header>
+  <div id="navbar">
+    <img src="Images/logo.jpg" alt="Cape Threads Logo" class="logo">
+    <span class="brand-name">Cape Threads</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="Products.html">Products</a>
+      <a href="Enquiry.html">Enquiry</a>
+      <a href="Contactus.html">Contact</a>
+      <a href="checkout.html" class="active cart-link">Cart <span class="cart-badge" id="cartCount">0</span></a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
   </div>
+</header>
 
-  <div class="col-25">
-    <div class="container">
-      <h4>Cart
-        <span class="price" style="color:black">
-          <i class="fa fa-shopping-cart"></i>
-          <b>4</b>
-        </span>
-      </h4>
-      <p><a href="#">Product 1</a> <span class="price">R15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">R5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">R8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">R2</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>R30</b></span></p>
-    </div>
-  </div>
+<div class="page-banner">
+  <h1>Checkout</h1>
+  <p>Complete your order securely</p>
 </div>
-    </main>
 
-    <!--Footer-->
-     <footer>
-        <!--call to action-->
-        <form id="action_page.php">
-            <div class="container">
-                <h2>Newsletter Sign Up</h2>
-                <p>Stay in the loop and know about our exclusives and upcoming releases.</p>
-            </div>
-            <div id="conatainer" >
-                <input type="text" placeholder="Name" name="name" required><br>
-                <input type="text" placeholder="Last Name" name="last name" required><br>
-                <input type="text" placeholder="Email Address" name="mail" required>
-            </div>
-        </form>
-        <!--Social-container-->
-        <h5>STALK US</h5>
-        <div id="social-conatainer">
-            <ul>
-            <li><a href="#"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a></li>
-            <li><a href="#"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a></li>
-            <li><a href="#"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></li>
-            <li><a href="#"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
-            </ul>
+<main>
+  <div class="checkout-wrapper">
+
+    <!-- Billing + Payment form -->
+    <div>
+      <div class="checkout-form-card" style="margin-bottom:24px;">
+        <h3>Billing Address</h3>
+        <div class="form-group">
+          <label for="fname">Full Name *</label>
+          <input type="text" id="fname" placeholder="John M. Doe" autocomplete="name">
+          <span class="field-error" id="fnameErr">Please enter your full name.</span>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email Address *</label>
+          <input type="email" id="femail" placeholder="john@example.com" autocomplete="email">
+          <span class="field-error" id="femailErr">Please enter a valid email address.</span>
+        </div>
+        <div class="form-group">
+          <label for="fadr">Street Address *</label>
+          <input type="text" id="fadr" placeholder="15 Bree Street" autocomplete="street-address">
+          <span class="field-error" id="fadrErr">Please enter your address.</span>
+        </div>
+        <div class="checkout-row">
+          <div class="form-group">
+            <label for="fcity">City *</label>
+            <input type="text" id="fcity" placeholder="Cape Town" autocomplete="address-level2">
+            <span class="field-error" id="fcityErr">Required.</span>
+          </div>
+          <div class="form-group">
+            <label for="fzip">Postal Code *</label>
+            <input type="text" id="fzip" placeholder="8001" maxlength="4">
+            <span class="field-error" id="fzipErr">4-digit postal code required.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout-form-card">
+        <h3>Payment Details</h3>
+        <div class="accepted-cards">
+          <span title="Visa">💳</span>
+          <span title="Mastercard" style="font-size:1.1rem; font-weight:700; color:var(--blue);">MC</span>
+          <span title="Amex" style="font-size:1.1rem; font-weight:700; color:#1a3c8b;">AMEX</span>
+        </div>
+        <div class="form-group">
+          <label for="ccname">Name on Card *</label>
+          <input type="text" id="ccname" placeholder="John M. Doe">
+          <span class="field-error" id="ccnameErr">Please enter the name on your card.</span>
+        </div>
+        <div class="form-group">
+          <label for="ccnum">Card Number *</label>
+          <input type="text" id="ccnum" placeholder="1234 5678 9012 3456" maxlength="19">
+          <span class="field-error" id="ccnumErr">Please enter a valid 16-digit card number.</span>
+        </div>
+        <div class="checkout-row">
+          <div class="form-group">
+            <label for="expiry">Expiry (MM/YY) *</label>
+            <input type="text" id="expiry" placeholder="09/27" maxlength="5">
+            <span class="field-error" id="expiryErr">Enter expiry as MM/YY.</span>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV *</label>
+            <input type="text" id="cvv" placeholder="352" maxlength="4">
+            <span class="field-error" id="cvvErr">Enter 3–4 digit CVV.</span>
+          </div>
         </div>
 
-        <!--CAPE THREADS-->
-        <h5>Cape Threads</h5>
-       
-        
-        <h1>CAPE THREADS</h1>
-        <p>&copy;2026 CAPE THREADS.all rights reserved</p>
-        
-     </footer>
+        <div class="form-response" id="checkoutResponse"></div>
+
+        <button class="btn-primary" style="width:100%; font-size:0.9rem; padding:14px; margin-top:8px;" onclick="submitCheckout()" id="checkoutBtn">
+          Place Order
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+      <h4>Order Summary</h4>
+      <div id="cartItems">
+        <p style="color:var(--grey); font-size:0.9rem; text-align:center; padding:20px 0;">Your cart is empty.<br><a href="Products.html" style="color:var(--blue);">Shop now →</a></p>
+      </div>
+      <div class="cart-total" id="cartTotal" style="display:none;">
+        <span>Total</span>
+        <span id="totalAmount">R0</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">Cape Threads</div>
+      <p>Cape Town's premium streetwear and sneaker destination.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Contactus.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@capethreads.co.za">info@capethreads.co.za</a></li>
+        <li><a href="tel:+27219008000">021 900 8000</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Email address" id="nlEmail">
+        <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Cape Threads. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Format card number
+  document.getElementById('ccnum').addEventListener('input', function() {
+    let v = this.value.replace(/\D/g,'').substring(0,16);
+    this.value = v.replace(/(.{4})/g,'$1 ').trim();
+  });
+
+  // Format expiry
+  document.getElementById('expiry').addEventListener('input', function() {
+    let v = this.value.replace(/\D/g,'');
+    if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2,4);
+    this.value = v;
+  });
+
+  // Load cart from session
+  window.addEventListener('load', () => {
+    const cart = JSON.parse(sessionStorage.getItem('ct_cart') || '[]');
+    document.getElementById('cartCount').textContent = cart.length;
+
+    if (cart.length > 0) {
+      const container = document.getElementById('cartItems');
+      container.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price;
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `<span class="cart-item-name">${item.name}</span><span class="cart-item-price">R${item.price.toFixed(2)}</span>`;
+        container.appendChild(div);
+      });
+      document.getElementById('cartTotal').style.display = 'flex';
+      document.getElementById('totalAmount').textContent = 'R' + total.toFixed(2);
+    }
+  });
+
+  function setErr(id, errId, show) {
+    const el = document.getElementById(id);
+    const err = document.getElementById(errId);
+    if (show) { el.classList.add('error-field'); err.classList.add('show'); }
+    else { el.classList.remove('error-field'); err.classList.remove('show'); }
+    return !show;
+  }
+
+  function submitCheckout() {
+    let valid = true;
+    if (!setErr('fname','fnameErr', document.getElementById('fname').value.trim().length < 2)) valid = false;
+    if (!setErr('femail','femailErr', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('femail').value.trim()))) valid = false;
+    if (!setErr('fadr','fadrErr', document.getElementById('fadr').value.trim().length < 3)) valid = false;
+    if (!setErr('fcity','fcityErr', document.getElementById('fcity').value.trim().length < 2)) valid = false;
+    if (!setErr('fzip','fzipErr', !/^\d{4}$/.test(document.getElementById('fzip').value.trim()))) valid = false;
+    if (!setErr('ccname','ccnameErr', document.getElementById('ccname').value.trim().length < 2)) valid = false;
+    if (!setErr('ccnum','ccnumErr', document.getElementById('ccnum').value.replace(/\s/g,'').length !== 16)) valid = false;
+    if (!setErr('expiry','expiryErr', !/^\d{2}\/\d{2}$/.test(document.getElementById('expiry').value.trim()))) valid = false;
+    if (!setErr('cvv','cvvErr', !/^\d{3,4}$/.test(document.getElementById('cvv').value.trim()))) valid = false;
+    if (!valid) return;
+
+    const btn = document.getElementById('checkoutBtn');
+    btn.textContent = 'Processing…';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      const resp = document.getElementById('checkoutResponse');
+      resp.className = 'form-response success';
+      resp.style.display = 'block';
+      resp.innerHTML = '<strong>✓ Order placed successfully!</strong><br>A confirmation will be sent to your email address.';
+      sessionStorage.removeItem('ct_cart');
+      document.getElementById('cartCount').textContent = '0';
+      btn.textContent = 'Order Placed ✓';
+      resp.scrollIntoView({ behavior: 'smooth' });
+    }, 1400);
+  }
+
+  function subscribeNewsletter() {
+    const email = document.getElementById('nlEmail').value.trim();
+    if (!email.includes('@')) { alert('Please enter a valid email.'); return; }
+    alert('✓ Subscribed!');
+    document.getElementById('nlEmail').value = '';
+  }
+</script>
 </body>
 </html>

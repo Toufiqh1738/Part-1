@@ -3,337 +3,594 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Products  — Cape Threads</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!--Header-->
-   <header>
-        <h1></h1>
-        <!--NavBar-->
-     <div id="navbar">
-        <div id="header-logo">
-            <img src="Images/logo.jpg" alt="logo"  class="logo">
-        </div>
-             <a  id="active" href="index.html">Home Page</a>
-             <a href="Aboutus.html">About Us</a>
-             <a href="Products.html">Products</a>
-             <a href="Enquiry.html">Enquiry</a>
-             <a href="contactus.html">Contact</a>  
-             <a href="checkout.html">CART</a>
-              <input type="text" placeholder="Search..">  
+<!-- ===== HEADER ===== -->
+<header>
+  <div id="navbar">
+    <img src="Images/logo.jpg" alt="Cape Threads Logo" class="logo">
+    <span class="brand-name">Cape Threads</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="Products.html" class="active">Products</a>
+      <a href="Enquiry.html">Enquiry</a>
+      <a href="Contactus.html">Contact</a>
+      <a href="checkout.html" class="cart-link">Cart <span class="cart-badge" id="cartCount">0</span></a>
+    </div>
+    <div class="nav-search">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search products…" id="globalSearch">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== PAGE BANNER ===== -->
+<div class="page-banner">
+  <h1>Our Products</h1>
+  <p>Premium sneakers &amp; streetwear — curated for Cape Town's culture</p>
+</div>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <section class="product-section">
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="🔍  Search by name or brand…" oninput="filterProducts()">
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All Categories</option>
+        <option value="sneakers">Sneakers</option>
+        <option value="apparel">Apparel</option>
+      </select>
+      <select id="sortFilter" onchange="filterProducts()">
+        <option value="default">Sort: Default</option>
+        <option value="low">Price: Low → High</option>
+        <option value="high">Price: High → Low</option>
+        <option value="name">Name: A → Z</option>
+      </select>
+    </div>
+
+    <!-- SNEAKERS -->
+    <h1 id="sneakers">Featured Products</h1>
+    <div class="category-label" style="margin-top:8px;">Sneakers</div>
+    <div class="product-grid" id="sneakersGrid">
+
+      <div class="product-card" data-category="sneakers" data-name="Nike Shox TL SE Burgundy Crush" data-price="3499.95">
+        <img src="Images/sneakers/Nike shox Tl Se 'Burgundy Crush'.webp" alt="Nike Shox TL SE Burgundy Crush" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Shox TL SE 'Burgundy Crush'</h3>
+          <div class="product-price">R3 499,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Shox TL SE', 3499.95)">Add to Cart</button></div>
         </div>
       </div>
-    </header>
 
-<!--main-->
-    <main>
-      <div class="scroll-container">
-     <section id="Products">
-    <h1>FEATURED PRODUCTS</h1>
-    <h2>SNEAKERS</h2>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Nike shox Tl Se 'Burgundy Crush'.webp" alt="Nike shox Tl Se 'Burgundy Crush">
-        <h3>Nike shox Tl Se 'Burgundy Crush</h3>
-        <p>R3 499,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Nike P-6000.webp" alt="Nike P-6000">
-        <h3>Nike P-6000</h3>
-        <p>R2 399,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Nike Womens Air Max 90.webp" alt="Images/Nike Womens Air Max 90.webp">
-        <h3>Nike Womens Air Max 90</h3>
-        <p>R2 999,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Puma Deviate Nitro 4.webp" alt="Puma Deviate Nitro 4">
-        <h3>Puma Deviate Nitro 4</h3>
-        <p>R3 999,95</p>
-        <button>Add to Cart</button>
-     </div>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Puma Speed cat Ballet 'Croc Print'.webp" alt="Puma Speed cat Ballet 'Croc Print'">
-        <h3>Puma Speed cat Ballet 'Croc Print'</h3>
-        <p>R1 699,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Salomon XT-6.webp" alt="Salomon XT-6">
-        <h3>Salomon XT-6</h3>
-        <p>R3 499,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Stepney Workers CLub Dellow S-Strike Repair Stitch.webp" alt="Stepney Workers CLub Dellow S-Strike Repair Stitch">
-        <h3>Stepney Workers CLub Dellow S-Strike Repair Stitch</h3>
-        <p>R3 199,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid" class="card">
-        <div id="product">
-        <img src="Images/sneakers/The Simpsons x Crocs Classic Clog 'Krusty The Clown'.webp" alt="The Simpsons x Crocs Classic Clog 'Krusty The Clown">
-        <h3>The Simpsons x Crocs Classic Clog 'Krusty The Clown</h3>
-        <p>R1 400,00</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Thug Club x adidasFom IIInfinity Mule Slides.webp" alt="Thug Club x adidasFom IIInfinity Mule Slides">
-        <h3>Thug Club x adidasFoam IIInfinity Mule Slides</h3>
-        <p>R1 699,90</p>
-        <button>Add to Cart</button>
-     </div>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/adidas Adizero F50.webp" alt="adidas Adizero F50">
-        <h3>adidas Adizero F50</h3>
-        <p>R2 900,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid">
-        <div id="product">
-        <img src="Images/sneakers/Air Jordan 1 low 'Triple White'.webp" alt="Air Jordan 1 low 'Triple White">
-        <h3>Air Jordan 1 low 'Triple White</h3>
-        <p>R2 500,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Air Jordan 6 Retro Women's Low 'Blackout'.webp" alt="Air Jordan 6 Retro Women's Low 'Blackout'">
-        <h3>Air Jordan 6 Retro Women's Low 'Blackout'</h3>
-        <p>R3 800,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Air Jordan 13 Retro 'White & University Red.webp" alt="Air Jordan 13 Retro 'White & University Red">
-        <h3>Air Jordan 13 Retro 'White & University Red</h3>
-        <p>R3 800,00</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Willy Chavarria x adidas Superstar.webp" alt="Willy Chavarria x adidas Superstar">
-        <h3>Willy Chavarria x adidas Superstar</h3>
-        <p>R3 299,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Air Jordan Sixty Plus Low (Grade School).webp" alt="Air Jordan Sixty Plus Low (Grade School)">
-        <h3>Air Jordan Sixty Plus Low (Grade School)</h3>
-        <p>R2 999,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid">
-        <div id="product">
-        <img src="Images/sneakers/Bad Bunny x adidas Badbo 1.0.webp" alt="Bad Bunny x adidas Badbo 1">
-        <h3>Bad Bunny x adidas Badbo 1</h3>
-        <p>R3 299,90</p>
-        <button>Add to Cart</button>
-     </div>
-       <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Birken Stock Suede Leather Boston.webp" alt="Birken Stock Suede Leather Boston">
-        <h3>Birken Stock Suede Leather Boston</h3>
-        <p>R3 899,90</p>
-        <button>Add to Cart</button>
-      </div>   
-     <div id="product-grid">
-        <div id="product">
-        <img src="Images/sneakers/GOLF le FLEUR x Converser 1908.webp" alt="GOLF le FLEUR x Converser 1908">
-        <h3>GOLF le FLEUR x Converse 1908</h3>
-        <p>R2 299,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid" class="card">
-        <div id="product">
-        <img src="Images/sneakers/Jordan Sons of Mars Low(Grade school).webp" alt="Jordan Sons of Mars Low(Grade school)" >
-        <h3>Jordan Sons of Mars Low(Grade school)</h3>
-        <p>R2 800</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Jordan Spizike Low 'Brazil'.webp" alt="Jordan Spizike Low 'Brazil">
-        <h3>Jordan Spizike Low 'Brazil</h3>
-        <p>R3 299,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Hardies x adidas Gazelle Indoor.webp" alt="Hardies x adidas Gazelle Indoorr">
-        <h3>Hardies x adidas Gazelle Indoor</h3>
-        <p>R2 499,90</p>
-        <button>Add to Cart</button>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Jordan Women's Spizikes low 'Legend Light Brown.webp" alt="Jordan Women's Spizikes low 'Legend Light Brown">
-        <h3>Jordan Women's Spizikes low 'Legend Light Brown</h3>
-        <p>R3 299,95</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/New Balance 1000 'Electric Indigo'.webp" alt="New Balance 1000 'Electric Indigo'">
-        <h3>New Balance 1000 'Electric Indigo'</h3>
-        <p>R3 399,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Nike Air Force 1 '07.webp" alt="Nike Air Force 1 '07">
-        <h3>Nike Air Force 1 '07</h3>
-        <p>R2 399,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/sneakers/Nike Dunk Low Retro SE.webp" alt="Nike Dunk Low Retro SE">
-        <h3> Nike Dunk Low Retro SE </h3>
-        <p>R2 299,90</p>
-        <button>Add to Cart</button>
-     </div>
-     <h2>APPAREL</h2>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Bape x adidas Flame Jersey.webp" alt="Bape x adidas Flame Jersey">
-        <h3> Bape x adidas Flame Jersey</h3>
-        <p>R2 499.90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Bape x adidas Shark Hoodie.webp" alt="Bape x adidas Shark Hoodie">
-        <h3> Bape x adidas Shark Hoodie </h3>
-        <p>R4 499.90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Carhartt Helix Redux T-Shirt.webp" alt="Carhartt Helix Redux T-Shirt">
-        <h3> Carhartt Helix Redux T-Shirt </h3>
-        <p>R1 099,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Daily Paper Monogram Workwear Amba Jeans.webp" alt="Daily Paper Monogram Workwear Amba Jeans">
-        <h3>Daily Paper Monogram Workwear Amba Jeans </h3>
-        <p>R3 499,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Daily Paper Shadown Grid Tee.webp" alt="Daily Paper Shadown Grid Tee">
-        <h3>Daily Paper Shadow Grid Tee</h3>
-        <p>R1 399,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/FREE THE YOUTH Soccer jersey.webp" alt="FREE THE YOUTH Soccer jersey">
-        <h3>FREE THE YOUTH Soccer jersey </h3>
-        <p>R2 999,90</p>
-        <button>Add to Cart</button>
-    </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Jordan Brooklyn Air Tee.webp" alt="Jordan Brooklyn Air Tee">
-        <h3> Jordan Brooklyn Air Tee </h3>
-        <p>R699,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Jordan Brooklyn AJ6 Fleece Crewneck.webp" alt="Jordan Brooklyn AJ6 Fleece Crewneck">
-         <h3>Jordan Brooklyn AJ6 Fleece Crewneck </h3>
-        <p>R1 399,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Nike Sportswear Club Fleece Crewneck.webp" alt="Nike Sportswear Club Fleece Crewneck">
-        <h3> Nike Sportswear Club Fleece Crewneck </h3>
-        <p>R1 199,95</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Nike Sportswear Club Fleece Track Pants.webp" alt="Nike Sportswear Club Fleece Track Pants">
-        <h3>Nike Sportswear Club Fleece Track Pants </h3>
-        <p>R1 299,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Nike Sportswear Together We Float Tee.webp" alt="Nike Sportswear Together We Float Tee">
-        <h3> Nike Sportswear Together We Float Tee </h3>
-        <p>R599,90</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/Nike Tech Boreas Oversized Hoodie.webp" alt="Nike Tech Boreas Oversized Hoodie">
-        <h3> Nike Tech Boreas Oversized Hoodie</h3>
-        <p>R3 499,95</p>
-        <button>Add to Cart</button>
-     </div>
-      <div id="product-grid"class="card">
-        <div id="product">
-        <img src="Images/apparel/SPZL x adidas Graphic Tee.webp" alt="SPZL x adidas Graphic Tee">
-        <h3> SPZL x adidas Graphic Tee </h3>
-        <p>R849,90</p>
-        <button>Add to Cart</button>
-     </div>
-   </div>
-     
-
-     </section>
-    </main>
-<!--Footer-->
-     <footer>
-        <!--call to action-->
-        <form id="action_page.php">
-            <div class="container">
-                <h2>Newsletter Sign Up</h2>
-                <p>Stay in the loop and know about our exclusives and upcoming releases.</p>
-            </div><br>
-            <div id="conatainer" >
-                <input type="text" placeholder="Name" name="name" required><br><br>
-                <input type="text" placeholder="Last Name" name="last name" required><br><br>
-                <input type="text" placeholder="Email Address" name="mail" required>
-            </div>
-        </form>
-        <!--Social-container-->
-        <h5>Cape Threads</h5>
-        <div id="footer-social-conatainer">
-            <ul>
-            <li><a href="#">Instgram </a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Tiktok</a></li>
-            </ul>
+      <div class="product-card" data-category="sneakers" data-name="Nike P-6000" data-price="2399.95">
+        <img src="Images/sneakers/Nike P-6000.webp" alt="Nike P-6000" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike P-6000</h3>
+          <div class="product-price">R2 399,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike P-6000', 2399.95)">Add to Cart</button></div>
         </div>
-        
-        <h1>CAPE THREADS</h1>
-        <p>&copy;2026 CAPE THREADS.all rights reserved</p>
-        
-     </footer>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Nike Womens Air Max 90" data-price="2999.95">
+        <img src="Images/sneakers/Nike Womens Air Max 90.webp" alt="Nike Womens Air Max 90" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Women's Air Max 90</h3>
+          <div class="product-price">R2 999,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Air Max 90', 2999.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Puma Deviate Nitro 4" data-price="3999.95">
+        <img src="Images/sneakers/Puma Deviate Nitro 4.webp" alt="Puma Deviate Nitro 4" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Puma Deviate Nitro 4</h3>
+          <div class="product-price">R3 999,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Puma Deviate Nitro 4', 3999.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Puma Speedcat Ballet Croc Print" data-price="1699.95">
+        <img src="Images/sneakers/Puma Speed cat Ballet 'Croc Print'.webp" alt="Puma Speedcat Ballet Croc Print" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Puma Speedcat Ballet 'Croc Print'</h3>
+          <div class="product-price">R1 699,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Puma Speedcat Ballet', 1699.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Salomon XT-6" data-price="3499.95">
+        <img src="Images/sneakers/Salomon XT-6.webp" alt="Salomon XT-6" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Salomon XT-6</h3>
+          <div class="product-price">R3 499,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Salomon XT-6', 3499.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Stepney Workers Club Dellow S-Strike" data-price="3199.95">
+        <img src="Images/sneakers/Stepney Workers CLub Dellow S-Strike Repair Stitch.webp" alt="Stepney Workers Club Dellow" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Stepney Workers Club Dellow S-Strike</h3>
+          <div class="product-price">R3 199,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Stepney Workers Club', 3199.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="The Simpsons Crocs Krusty The Clown" data-price="1400.00">
+        <img src="Images/sneakers/The Simpsons x Crocs Classic Clog 'Krusty The Clown'.webp" alt="The Simpsons x Crocs" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>The Simpsons x Crocs 'Krusty The Clown'</h3>
+          <div class="product-price">R1 400,00</div>
+          <div class="btn-cart"><button onclick="addToCart('Simpsons Crocs', 1400.00)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Thug Club adidas Foam Infinity Mule" data-price="1699.90">
+        <img src="Images/sneakers/Thug Club x adidasFom IIInfinity Mule Slides.webp" alt="Thug Club x adidas Foam Infinity" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Thug Club x adidas Foam IIInfinity Slides</h3>
+          <div class="product-price">R1 699,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Thug Club adidas Slides', 1699.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Adidas Adizero F50" data-price="2900.90">
+        <img src="Images/sneakers/adidas Adizero F50.webp" alt="adidas Adizero F50" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>adidas Adizero F50</h3>
+          <div class="product-price">R2 900,90</div>
+          <div class="btn-cart"><button onclick="addToCart('adidas Adizero F50', 2900.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Air Jordan 1 Low Triple White" data-price="2500.90">
+        <img src="Images/sneakers/Air Jordan 1 low 'Triple White'.webp" alt="Air Jordan 1 Low Triple White" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Air Jordan 1 Low 'Triple White'</h3>
+          <div class="product-price">R2 500,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Air Jordan 1 Low', 2500.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Air Jordan 6 Retro Women Low Blackout" data-price="3800.90">
+        <img src="Images/sneakers/Air Jordan 6 Retro Women's Low 'Blackout'.webp" alt="Air Jordan 6 Retro Women Low Blackout" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Air Jordan 6 Retro Women's Low 'Blackout'</h3>
+          <div class="product-price">R3 800,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Air Jordan 6 Retro', 3800.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Air Jordan 13 Retro White University Red" data-price="3800.00">
+        <img src="Images/sneakers/Air Jordan 13 Retro 'White & University Red.webp" alt="Air Jordan 13 Retro" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Air Jordan 13 Retro 'White &amp; University Red'</h3>
+          <div class="product-price">R3 800,00</div>
+          <div class="btn-cart"><button onclick="addToCart('Air Jordan 13 Retro', 3800.00)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Willy Chavarria adidas Superstar" data-price="3299.90">
+        <img src="Images/sneakers/Willy Chavarria x adidas Superstar.webp" alt="Willy Chavarria x adidas Superstar" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Willy Chavarria x adidas Superstar</h3>
+          <div class="product-price">R3 299,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Willy Chavarria Superstar', 3299.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Air Jordan Sixty Plus Low Grade School" data-price="2999.90">
+        <img src="Images/sneakers/Air Jordan Sixty Plus Low (Grade School).webp" alt="Air Jordan Sixty Plus Low" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Air Jordan Sixty Plus Low (Grade School)</h3>
+          <div class="product-price">R2 999,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Air Jordan Sixty Plus', 2999.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Bad Bunny adidas Badboy" data-price="3299.90">
+        <img src="Images/sneakers/Bad Bunny x adidas Badbo 1.0.webp" alt="Bad Bunny x adidas Badboy" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Bad Bunny x adidas Badboy 1</h3>
+          <div class="product-price">R3 299,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Bad Bunny adidas', 3299.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Birkenstock Suede Leather Boston" data-price="3899.90">
+        <img src="Images/sneakers/Birken Stock Suede Leather Boston.webp" alt="Birkenstock Suede Leather Boston" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Birkenstock Suede Leather Boston</h3>
+          <div class="product-price">R3 899,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Birkenstock Boston', 3899.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="GOLF le FLEUR Converse 1908" data-price="2299.90">
+        <img src="Images/sneakers/GOLF le FLEUR x Converser 1908.webp" alt="GOLF le FLEUR x Converse 1908" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>GOLF le FLEUR x Converse 1908</h3>
+          <div class="product-price">R2 299,90</div>
+          <div class="btn-cart"><button onclick="addToCart('GOLF le FLEUR Converse', 2299.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Jordan Sons of Mars Low Grade School" data-price="2800.00">
+        <img src="Images/sneakers/Jordan Sons of Mars Low(Grade school).webp" alt="Jordan Sons of Mars Low" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Jordan Sons of Mars Low (Grade School)</h3>
+          <div class="product-price">R2 800,00</div>
+          <div class="btn-cart"><button onclick="addToCart('Jordan Sons of Mars', 2800.00)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Jordan Spizike Low Brazil" data-price="3299.95">
+        <img src="Images/sneakers/Jordan Spizike Low 'Brazil'.webp" alt="Jordan Spizike Low Brazil" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Jordan Spizike Low 'Brazil'</h3>
+          <div class="product-price">R3 299,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Jordan Spizike Low', 3299.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Hardies adidas Gazelle Indoor" data-price="2499.90">
+        <img src="Images/sneakers/Hardies x adidas Gazelle Indoor.webp" alt="Hardies x adidas Gazelle Indoor" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Hardies x adidas Gazelle Indoor</h3>
+          <div class="product-price">R2 499,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Hardies Gazelle', 2499.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Jordan Womens Spizikes Low Legend Light Brown" data-price="3299.95">
+        <img src="Images/sneakers/Jordan Women's Spizikes low 'Legend Light Brown.webp" alt="Jordan Women's Spizikes Low" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Jordan Women's Spizikes Low 'Legend Light Brown'</h3>
+          <div class="product-price">R3 299,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Jordan Spizikes Low Women', 3299.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="New Balance 1000 Electric Indigo" data-price="3399.90">
+        <img src="Images/sneakers/New Balance 1000 'Electric Indigo'.webp" alt="New Balance 1000 Electric Indigo" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>New Balance 1000 'Electric Indigo'</h3>
+          <div class="product-price">R3 399,90</div>
+          <div class="btn-cart"><button onclick="addToCart('New Balance 1000', 3399.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Nike Air Force 1 07" data-price="2399.90">
+        <img src="Images/sneakers/Nike Air Force 1 '07.webp" alt="Nike Air Force 1 07" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Air Force 1 '07</h3>
+          <div class="product-price">R2 399,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Air Force 1', 2399.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="sneakers" data-name="Nike Dunk Low Retro SE" data-price="2299.90">
+        <img src="Images/sneakers/Nike Dunk Low Retro SE.webp" alt="Nike Dunk Low Retro SE" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Dunk Low Retro SE</h3>
+          <div class="product-price">R2 299,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Dunk Low', 2299.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+    </div><!-- end sneakersGrid -->
+
+    <!-- APPAREL -->
+    <div class="category-label" id="apparel" style="margin-top:64px;">Apparel</div>
+    <div class="product-grid" id="apparelGrid">
+
+      <div class="product-card" data-category="apparel" data-name="Bape adidas Flame Jersey" data-price="2499.90">
+        <img src="Images/apparel/Bape x adidas Flame Jersey.webp" alt="Bape x adidas Flame Jersey" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Bape x adidas Flame Jersey</h3>
+          <div class="product-price">R2 499,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Bape Flame Jersey', 2499.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Bape adidas Shark Hoodie" data-price="4499.90">
+        <img src="Images/apparel/Bape x adidas Shark Hoodie.webp" alt="Bape x adidas Shark Hoodie" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Bape x adidas Shark Hoodie</h3>
+          <div class="product-price">R4 499,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Bape Shark Hoodie', 4499.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Carhartt Helix Redux T-Shirt" data-price="1099.90">
+        <img src="Images/apparel/Carhartt Helix Redux T-Shirt.webp" alt="Carhartt Helix Redux T-Shirt" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Carhartt Helix Redux T-Shirt</h3>
+          <div class="product-price">R1 099,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Carhartt Helix Tee', 1099.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Daily Paper Monogram Workwear Amba Jeans" data-price="3499.90">
+        <img src="Images/apparel/Daily Paper Monogram Workwear Amba Jeans.webp" alt="Daily Paper Monogram Workwear Amba Jeans" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Daily Paper Monogram Workwear Amba Jeans</h3>
+          <div class="product-price">R3 499,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Daily Paper Jeans', 3499.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Daily Paper Shadow Grid Tee" data-price="1399.90">
+        <img src="Images/apparel/Daily Paper Shadown Grid Tee.webp" alt="Daily Paper Shadow Grid Tee" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Daily Paper Shadow Grid Tee</h3>
+          <div class="product-price">R1 399,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Daily Paper Grid Tee', 1399.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="FREE THE YOUTH Soccer Jersey" data-price="2999.90">
+        <img src="Images/apparel/FREE THE YOUTH Soccer jersey.webp" alt="FREE THE YOUTH Soccer Jersey" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>FREE THE YOUTH Soccer Jersey</h3>
+          <div class="product-price">R2 999,90</div>
+          <div class="btn-cart"><button onclick="addToCart('FTY Soccer Jersey', 2999.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Jordan Brooklyn Air Tee" data-price="699.90">
+        <img src="Images/apparel/Jordan Brooklyn Air Tee.webp" alt="Jordan Brooklyn Air Tee" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Jordan Brooklyn Air Tee</h3>
+          <div class="product-price">R699,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Jordan Brooklyn Air Tee', 699.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Jordan Brooklyn AJ6 Fleece Crewneck" data-price="1399.90">
+        <img src="Images/apparel/Jordan Brooklyn AJ6 Fleece Crewneck.webp" alt="Jordan Brooklyn AJ6 Fleece Crewneck" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Jordan Brooklyn AJ6 Fleece Crewneck</h3>
+          <div class="product-price">R1 399,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Jordan AJ6 Crewneck', 1399.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Nike Sportswear Club Fleece Crewneck" data-price="1199.95">
+        <img src="Images/apparel/Nike Sportswear Club Fleece Crewneck.webp" alt="Nike Sportswear Club Fleece Crewneck" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Sportswear Club Fleece Crewneck</h3>
+          <div class="product-price">R1 199,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Fleece Crewneck', 1199.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Nike Sportswear Club Fleece Track Pants" data-price="1299.90">
+        <img src="Images/apparel/Nike Sportswear Club Fleece Track Pants.webp" alt="Nike Sportswear Club Fleece Track Pants" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Sportswear Club Fleece Track Pants</h3>
+          <div class="product-price">R1 299,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Track Pants', 1299.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Nike Sportswear Together We Float Tee" data-price="599.90">
+        <img src="Images/apparel/Nike Sportswear Together We Float Tee.webp" alt="Nike Together We Float Tee" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Sportswear Together We Float Tee</h3>
+          <div class="product-price">R599,90</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Float Tee', 599.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="Nike Tech Boreas Oversized Hoodie" data-price="3499.95">
+        <img src="Images/apparel/Nike Tech Boreas Oversized Hoodie.webp" alt="Nike Tech Boreas Oversized Hoodie" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>Nike Tech Boreas Oversized Hoodie</h3>
+          <div class="product-price">R3 499,95</div>
+          <div class="btn-cart"><button onclick="addToCart('Nike Tech Boreas Hoodie', 3499.95)">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="apparel" data-name="SPZL adidas Graphic Tee" data-price="849.90">
+        <img src="Images/apparel/SPZL x adidas Graphic Tee.webp" alt="SPZL x adidas Graphic Tee" onclick="openLightbox(this)">
+        <div class="product-info">
+          <h3>SPZL x adidas Graphic Tee</h3>
+          <div class="product-price">R849,90</div>
+          <div class="btn-cart"><button onclick="addToCart('SPZL Graphic Tee', 849.90)">Add to Cart</button></div>
+        </div>
+      </div>
+
+    </div><!-- end apparelGrid -->
+
+    <!-- No results msg -->
+    <p id="noResults" style="display:none; text-align:center; color:var(--grey); padding:40px; font-size:1rem;">
+      No products match your search. Try a different term.
+    </p>
+
+  </section>
+</main>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <button class="lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+  <img src="" alt="" class="lightbox-img" id="lightboxImg">
+  <button class="lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">Cape Threads</div>
+      <p>Cape Town's premium streetwear and sneaker destination.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563C3.33.955 2.661 1.369 1.996 2.036 1.33 2.703.92 3.372.615 4.163.32 4.926.12 5.8.063 7.077.007 8.355-.006 8.765 0 12.025c.006 3.258.021 3.667.083 4.947.062 1.276.265 2.148.563 2.911.308.788.72 1.457 1.388 2.122.668.666 1.337 1.075 2.128 1.38.763.295 1.636.496 2.913.552 1.278.056 1.688.069 4.948.063 3.258-.007 3.667-.021 4.947-.083 1.28-.061 2.148-.265 2.91-.563.789-.308 1.457-.72 2.122-1.388.666-.668 1.075-1.337 1.38-2.128.295-.763.495-1.636.552-2.913.056-1.28.069-1.69.063-4.948-.007-3.259-.021-3.667-.083-4.947-.061-1.28-.265-2.149-.563-2.911-.308-.789-.72-1.457-1.388-2.122C21.298 1.33 20.628.921 19.837.617 19.074.321 18.2.12 16.924.064 15.647.007 15.236-.006 11.976 0 8.717.006 8.31.021 7.03.084M12 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8m6.406-2.845a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contactus.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="#sneakers">Sneakers</a></li>
+        <li><a href="#apparel">Apparel</a></li>
+        <li><a href="checkout.html">Cart</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <div class="newsletter-form">
+        <input type="text" placeholder="First name" id="nlName">
+        <input type="email" placeholder="Email address" id="nlEmail">
+        <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
+        <p id="nlMsg" style="font-size:0.8rem; color:var(--accent); display:none;">✓ You're subscribed!</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Cape Threads. All rights reserved.</span>
+    <span>V&amp;A Waterfront &amp; Canal Walk, Cape Town</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ---- Search + Filter ----
+  function filterProducts() {
+    const search = document.getElementById('searchInput').value.toLowerCase();
+    const category = document.getElementById('categoryFilter').value;
+    const sort = document.getElementById('sortFilter').value;
+
+    let cards = Array.from(document.querySelectorAll('.product-card'));
+    let visible = 0;
+
+    // Filter
+    cards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      const cat = card.dataset.category;
+      const matchSearch = name.includes(search);
+      const matchCat = (category === 'all') || (cat === category);
+      if (matchSearch && matchCat) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Sort visible cards within each grid
+    ['sneakersGrid','apparelGrid'].forEach(gridId => {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      const gridCards = Array.from(grid.querySelectorAll('.product-card'))
+        .filter(c => c.style.display !== 'none');
+      gridCards.sort((a, b) => {
+        if (sort === 'low') return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+        if (sort === 'high') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+        if (sort === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+        return 0;
+      });
+      gridCards.forEach(c => grid.appendChild(c));
+    });
+
+    document.getElementById('noResults').style.display = (visible === 0) ? 'block' : 'none';
+  }
+
+  // ---- Lightbox ----
+  let lightboxImages = [];
+  let lightboxIndex = 0;
+
+  function buildLightboxImages() {
+    lightboxImages = Array.from(document.querySelectorAll('.product-card img'));
+  }
+
+  function openLightbox(imgEl) {
+    buildLightboxImages();
+    lightboxIndex = lightboxImages.indexOf(imgEl);
+    showLightbox();
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function showLightbox() {
+    const img = lightboxImages[lightboxIndex];
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.alt;
+    document.getElementById('lightboxCaption').textContent = img.alt;
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  function closeLightboxOutside(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+
+  function lightboxNav(dir) {
+    lightboxIndex = (lightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    showLightbox();
+  }
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+  });
+
+  // ---- Cart ----
+  function addToCart(name, price) {
+    let cart = JSON.parse(sessionStorage.getItem('ct_cart') || '[]');
+    cart.push({ name, price });
+    sessionStorage.setItem('ct_cart', JSON.stringify(cart));
+    document.getElementById('cartCount').textContent = cart.length;
+    const btn = event.target;
+    btn.textContent = '✓ Added';
+    btn.style.background = 'var(--success)';
+    setTimeout(() => { btn.textContent = 'Add to Cart'; btn.style.background = ''; }, 1500);
+  }
+
+  // Init cart count
+  window.addEventListener('load', () => {
+    const cart = JSON.parse(sessionStorage.getItem('ct_cart') || '[]');
+    document.getElementById('cartCount').textContent = cart.length;
+  });
+
+  function subscribeNewsletter() {
+    const name = document.getElementById('nlName').value.trim();
+    const email = document.getElementById('nlEmail').value.trim();
+    if (!name || !email.includes('@')) { alert('Please enter your name and a valid email.'); return; }
+    document.getElementById('nlMsg').style.display = 'block';
+    document.getElementById('nlName').value = '';
+    document.getElementById('nlEmail').value = '';
+  }
+</script>
 
      
 </body>

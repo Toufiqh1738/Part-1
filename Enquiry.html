@@ -3,84 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquiry</title>
+    <title>Enquiry  — Cape Threads</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!--Header-->
-    <header>
-        <h1></h1>
-        <!--NavBar-->
-     <div id="navbar">
-        <div id="header-logo">
-            <img src="Images/logo.jpg" alt="logo" class="logo">
-        </div>
-             <a href="index.html">Home Page</a>
-             <a href="Aboutus.html">About Us</a>
-             <a href="Products.html">Products</a>
-             <a href="Enquiry.html">Enquiry</a>
-             <a href="contactus.html">Contact</a>   
-             <a href="checkout.html">CART</a>
-             <input type="text" placeholder="Search..">    
-     </div>
-    </header>
+<!-- ===== HEADER ===== -->
+<header>
+  <div id="navbar">
+    <img src="Images/logo.jpg" alt="Cape Threads Logo" class="logo">
+    <span class="brand-name">Cape Threads</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="Products.html">Products</a>
+      <a href="Enquiry.html" class="active">Enquiry</a>
+      <a href="Contactus.html">Contact</a>
+      <a href="checkout.html" class="cart-link">Cart <span class="cart-badge" id="cartCount">0</span></a>
+    </div>
+    <div class="nav-search">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search products…">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
 
-<!--main-->
-    <div class="form-container">
-    <h2>Inquiry Form</h2>
-    <form action="" method="POST">
-        <!-- Name -->
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
+<!-- ===== PAGE BANNER ===== -->
+<div class="page-banner">
+  <h1>Enquiry</h1>
+  <p>Ask about product availability, pricing, or custom orders</p>
+</div>
+
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="form-page">
+    <div class="form-card">
+      <h2>Send an Enquiry</h2>
+      <p class="form-subtitle">Fill in the form below and we'll respond with pricing, availability, or any other details you need — usually within one business day.</p>
+
+      <!-- Response message -->
+      <div class="form-response" id="formResponse"></div>
+
+      <form id="enquiryForm" novalidate>
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Aisha Patel" autocomplete="name">
+          <span class="field-error" id="fullNameErr">Please enter your full name (at least 2 characters).</span>
+        </div>
 
         <!-- Email -->
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="field-error" id="emailErr">Please enter a valid email address.</span>
+        </div>
 
-        <!-- Subject -->
-        <label for="Enquiry">Enquiry</label>
-        <input type="text" id="Enquiry" name="Enquiry" placeholder="Enquiry" required>
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. 073 123 4567">
+          <span class="field-error" id="phoneErr">Please enter a valid South African phone number (10 digits).</span>
+        </div>
+
+        <!-- Enquiry Type -->
+        <div class="form-group">
+          <label for="enquiryType">Enquiry Type *</label>
+          <select id="enquiryType" name="enquiryType">
+            <option value="">— Select a type —</option>
+            <option value="product-availability">Product Availability</option>
+            <option value="pricing">Pricing</option>
+            <option value="custom-order">Custom / Bulk Order</option>
+            <option value="sponsorship">Sponsorship</option>
+            <option value="volunteer">Volunteering</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="field-error" id="enquiryTypeErr">Please select an enquiry type.</span>
+        </div>
+
+        <!-- Product Name (conditional) -->
+        <div class="form-group" id="productNameGroup" style="display:none;">
+          <label for="productName">Product Name / SKU</label>
+          <input type="text" id="productName" name="productName" placeholder="e.g. Nike Air Force 1 '07">
+        </div>
 
         <!-- Message -->
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-
-        <!-- Submit -->
-        <button type="submit">Submit Inquiry</button>
-    </form>
-</div>
-<!--Footer-->
-     <footer>
-        <!--call to action-->
-        <form id="action_page.php">
-            <div class="container">
-                <h2>Newsletter Sign Up</h2>
-                <p>Stay in the loop and know about our exclusives and upcoming releases.</p>
-            </div>
-            <div id="conatainer" >
-                <input type="text" placeholder="Name" name="name" required><br>
-                <input type="text" placeholder="Last Name" name="last name" required><br>
-                <input type="text" placeholder="Email Address" name="mail" required>
-            </div>
-        </form>
-        <!--Social-container-->
-        <h5>STALK US</h5>
-        
-
-        <!--CAPE THREADS-->
-        <h5>Cape Threads</h5>
-        <div id="social-conatainer">
-            <ul>
-            <li><a href=""></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            </ul>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" placeholder="Describe your enquiry in detail — size, colour, quantity, etc." maxlength="1000"></textarea>
+          <span class="field-error" id="messageErr">Please enter a message (at least 20 characters).</span>
+          <span style="font-size:0.75rem; color:var(--grey);" id="charCount">0 / 1000</span>
         </div>
-        
-        <h1>CAPE THREADS</h1>
-        <p>&copy;2026 CAPE THREADS.all rights reserved</p>
-        
-     </footer>
+
+        <button type="submit" class="btn-primary" style="width:100%; font-size:0.9rem; padding:14px;" id="submitBtn">
+          Send Enquiry
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">Cape Threads</div>
+      <p>Cape Town's premium streetwear and sneaker destination.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contactus.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@capethreads.co.za">info@capethreads.co.za</a></li>
+        <li><a href="tel:+27219008000">021 900 8000</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <div class="newsletter-form">
+        <input type="text" placeholder="First name" id="nlName">
+        <input type="email" placeholder="Email address" id="nlEmail">
+        <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
+        <p id="nlMsg" style="font-size:0.8rem; color:var(--accent); display:none;">✓ You're subscribed!</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Cape Threads. All rights reserved.</span>
+    <span>V&amp;A Waterfront &amp; Canal Walk, Cape Town</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Show product name field when relevant enquiry type selected
+  document.getElementById('enquiryType').addEventListener('change', function() {
+    const show = ['product-availability','pricing','custom-order'].includes(this.value);
+    document.getElementById('productNameGroup').style.display = show ? 'block' : 'none';
+  });
+
+  // Char counter
+  document.getElementById('message').addEventListener('input', function() {
+    document.getElementById('charCount').textContent = this.value.length + ' / 1000';
+  });
+
+  // --- Validation helpers ---
+  function setError(inputId, errId, show) {
+    const input = document.getElementById(inputId);
+    const err = document.getElementById(errId);
+    if (show) {
+      input.classList.add('error-field');
+      err.classList.add('show');
+    } else {
+      input.classList.remove('error-field');
+      err.classList.remove('show');
+    }
+    return !show;
+  }
+
+  function validateForm() {
+    let valid = true;
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const type = document.getElementById('enquiryType').value;
+    const message = document.getElementById('message').value.trim();
+
+    if (!setError('fullName', 'fullNameErr', name.length < 2)) valid = false;
+    if (!setError('email', 'emailErr', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) valid = false;
+    if (phone && !setError('phone', 'phoneErr', !/^0[6-8][0-9]{8}$/.test(phone.replace(/\s/g,'')))) valid = false;
+    if (!setError('enquiryType', 'enquiryTypeErr', !type)) valid = false;
+    if (!setError('message', 'messageErr', message.length < 20)) valid = false;
+
+    return valid;
+  }
+
+  // Live validation on blur
+  ['fullName','email','phone','enquiryType','message'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('blur', validateForm);
+  });
+
+  // --- AJAX-style form submission ---
+  document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    const btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    // Build enquiry summary
+    const enquiryData = {
+      name: document.getElementById('fullName').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim() || 'Not provided',
+      type: document.getElementById('enquiryType').value,
+      product: document.getElementById('productName').value.trim() || 'N/A',
+      message: document.getElementById('message').value.trim(),
+      submittedAt: new Date().toLocaleString('en-ZA')
+    };
+
+    // Simulate AJAX submission (replace fetch URL with your backend)
+    setTimeout(() => {
+      const resp = document.getElementById('formResponse');
+      resp.className = 'form-response success';
+      resp.style.display = 'block';
+      resp.innerHTML = `
+        <strong>✓ Enquiry received, ${enquiryData.name}!</strong><br>
+        We'll respond to <em>${enquiryData.email}</em> regarding your
+        <em>${enquiryData.type.replace(/-/g,' ')}</em> enquiry within one business day.
+      `;
+      document.getElementById('enquiryForm').reset();
+      document.getElementById('charCount').textContent = '0 / 1000';
+      document.getElementById('productNameGroup').style.display = 'none';
+      btn.textContent = 'Send Enquiry';
+      btn.disabled = false;
+      resp.scrollIntoView({ behavior: 'smooth' });
+    }, 1200);
+  });
+
+  // Cart init
+  window.addEventListener('load', () => {
+    const cart = JSON.parse(sessionStorage.getItem('ct_cart') || '[]');
+    document.getElementById('cartCount').textContent = cart.length;
+  });
+
+  function subscribeNewsletter() {
+    const name = document.getElementById('nlName').value.trim();
+    const email = document.getElementById('nlEmail').value.trim();
+    if (!name || !email.includes('@')) { alert('Please enter your name and a valid email.'); return; }
+    document.getElementById('nlMsg').style.display = 'block';
+    document.getElementById('nlName').value = '';
+    document.getElementById('nlEmail').value = '';
+  }
+</script>
 </body>
 </html>

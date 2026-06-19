@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block admin or private paths if added later
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://www.capethreads.co.za/sitemap.xml

@@ -3,118 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us  — Cape Threads</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--Start of Contactus-->
-    <!--header-->
-   <header>
-        <!--NavBar-->
-        <div class="logo">CAPE THREADS</div>
-        <nav id="nav">
-         <ul>
-             <li><a href="index.html">Home Page</a></li>
-             <li><a href="Aboutus.html">About Us</a></li>
-             <li><a href="Products.html">Products</a></li>
-             <li><a href="Enquiry.html">Enquiry</a></li>
-             <li><a href="contactus.html">Contact</a> </li> 
-             <li><a href="checkout.html">Cart</a></li>
-         </ul>
-        </nav>
-      <div class="hamburger" onclick="toggleMenu()">
-          <div></div>
-          <div></div>
-          <div></div>
-       
-        </div>
-      
-      
-    </header>
-      
-    
-<!--main--> 
-   <main>
-    <!--sections-->
-    <!--Location-->
-    
-        <h2>LOCATION</h2>
-        <div id="location-conatainer">
-            <p>V & A Waterfront Cape Town, 8001 </p>
-            "<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13245.418663201026!2d18.41356756988742!3d-33.90627041249027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6750cf9544a5%3A0x1dc3860578bb4780!2sV%26A%20Waterfront!5e0!3m2!1sen!2sza!4v1776500140244!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"<br>
-            
-           <br><P> Canal Walk Shopping Center, Century City, Cape Town, 7446</P>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.8641923039554!2d18.509364876376907!3d-33.89315132032163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5c11d3c4841f%3A0x9f5bb7491ff8dca8!2sCanal%20Walk%20Shopping%20Centre!5e0!3m2!1sen!2sza!4v1776500496909!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    <!--Contact-->
-   <h3>Contact</h3> 
-  <div id="Contact">
-   <p>info@CAPETREADS.co.za</p>
-   <p>021 900 8000</p>
-   <p>073 5929 715</p>
+    <!-- ===== HEADER ===== -->
+<header>
+  <div id="navbar">
+    <img src="Images/logo.jpg" alt="Cape Threads Logo" class="logo">
+    <span class="brand-name">Cape Threads</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="Products.html">Products</a>
+      <a href="Enquiry.html">Enquiry</a>
+      <a href="Contactus.html" class="active">Contact</a>
+      <a href="checkout.html" class="cart-link">Cart <span class="cart-badge" id="cartCount">0</span></a>
+    </div>
+    <div class="nav-search">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search products…">
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
+</header>
 
-    <!--Trading hours-->
-    <h3>Trading hours</h3>
-    <div id="Trading hours">
-        <p>Monday - Friday :       08:45 to 17:00<br>
-       <br>Saturdays :         09:00 to 14:00<br>
-       <br>Sunday :            closed<br>
-       <br>Public Holidays :   closed<br>
-    </p>
-    </div>
-        <!--creation of contact form-->
-    <div id="form">
-        <form action="submit" method="post">
-    <!--name and input label-->
-        <label for="name">Name:</label><br>
-        <input type="text" name="name" id="name" required>
-        <br><br> 
+<!-- ===== PAGE BANNER ===== -->
+<div class="page-banner">
+  <h1>Contact Us</h1>
+  <p>We'd love to hear from you</p>
+</div>
 
+<!-- ===== MAIN ===== -->
+<main>
+  <div class="contact-grid">
 
-    <!--Email and input label-->
-        <label for="email">Email:</label><br>
-        <input type="text" name="email" id="email" required>
-        <br><br>
+    <!-- Left: Info + Maps -->
+    <div>
+      <div class="contact-info-card">
+        <h2>Get In Touch</h2>
 
-
-    <!--Textarea-->
-        <label for="message">Message:</label><br>
-        <textarea name="message" id="message" rows="4" col="50"
-         required></textarea>
-      <!--submit button-->
-         <input type="submit" value="Submit">
-         <input type="reset" value="Reset">
-    </div>
-    <p id="errorMsg" class="error"></p>
-
-   </main>
-<!--Footer-->
-    <footer>
-        <!--call to action-->
-        <form id="action_page.php">
-            <div class="container">
-                <h2>Newsletter Sign Up</h2>
-                <p>Stay in the loop and know about our exclusives and upcoming releases.</p>
-            </div>
-            <div id="conatainer" >
-                <input type="text" placeholder="Name" name="name" required><br>
-                <input type="text" placeholder="Last Name" name="last name" required><br>
-                <input type="text" placeholder="Email Address" name="mail" required>
-                <button>SHOP NOW </button>
-            </div>
-        </form>
-        <div class="Cape-threads">
-        <h1>CAPE THREADS</h1>
-        <p>&copy;2026 CAPE THREADS.all rights reserved</p>
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <p><a href="mailto:info@capethreads.co.za" style="color:var(--accent);">info@capethreads.co.za</a></p>
         </div>
-    </footer>
-       <!--SCRIPT-->
-   <script src="script.js">
-    function toggleMenu(){
-        const nav = document.getElementById("nav");
-        nav.classList.toggle("active");
-    }
-   </script>
+
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <p>021 900 8000<br>073 592 9715</p>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Trading Hours</div>
+          <p>
+            Monday – Friday: 08:45 – 17:00<br>
+            Saturday: 09:00 – 14:00<br>
+            Sunday &amp; Public Holidays: Closed
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Social</div>
+          <div class="social-links" style="margin-top:6px;">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.03.084c-1.277.06-2.149.264-2.911.563C3.33.955 2.661 1.369 1.996 2.036 1.33 2.703.92 3.372.615 4.163.32 4.926.12 5.8.063 7.077.007 8.355-.006 8.765 0 12.025c.006 3.258.021 3.667.083 4.947.062 1.276.265 2.148.563 2.911.308.788.72 1.457 1.388 2.122.668.666 1.337 1.075 2.128 1.38.763.295 1.636.496 2.913.552 1.278.056 1.688.069 4.948.063 3.258-.007 3.667-.021 4.947-.083 1.28-.061 2.148-.265 2.91-.563.789-.308 1.457-.72 2.122-1.388.666-.668 1.075-1.337 1.38-2.128.295-.763.495-1.636.552-2.913.056-1.28.069-1.69.063-4.948-.007-3.259-.021-3.667-.083-4.947-.061-1.28-.265-2.149-.563-2.911-.308-.789-.72-1.457-1.388-2.122C21.298 1.33 20.628.921 19.837.617 19.074.321 18.2.12 16.924.064 15.647.007 15.236-.006 11.976 0 8.717.006 8.31.021 7.03.084M12 5.838a6.162 6.162 0 1 1 0 12.324 6.162 6.162 0 0 1 0-12.324M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8m6.406-2.845a1.44 1.44 0 1 1 0 2.88 1.44 1.44 0 0 1 0-2.88"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maps -->
+      <div class="map-label" style="margin-top:28px; color:var(--grey);">V&amp;A Waterfront, Cape Town</div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13245.418663201026!2d18.41356756988742!3d-33.90627041249027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc6750cf9544a5%3A0x1dc3860578bb4780!2sV%26A%20Waterfront!5e0!3m2!1sen!2sza!4v1776500140244!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="map-label" style="margin-top:24px; color:var(--grey);">Canal Walk, Century City</div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.8641923039554!2d18.509364876376907!3d-33.89315132032163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5c11d3c4841f%3A0x9f5bb7491ff8dca8!2sCanal%20Walk%20Shopping%20Centre!5e0!3m2!1sen!2sza!4v1776500496909!5m2!1sen!2sza" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="form-card">
+      <h2>Send a Message</h2>
+      <p class="form-subtitle">Fill in the form and we'll compile your message and get back to you as soon as possible.</p>
+
+      <div class="form-response" id="formResponse"></div>
+
+      <form id="contactForm" novalidate>
+
+        <div class="form-group">
+          <label for="cName">Full Name *</label>
+          <input type="text" id="cName" name="name" placeholder="e.g. Aisha Patel" autocomplete="name">
+          <span class="field-error" id="cNameErr">Please enter your full name.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cEmail">Email Address *</label>
+          <input type="email" id="cEmail" name="email" placeholder="you@example.com" autocomplete="email">
+          <span class="field-error" id="cEmailErr">Please enter a valid email address.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cPhone">Phone Number</label>
+          <input type="tel" id="cPhone" name="phone" placeholder="e.g. 073 123 4567">
+          <span class="field-error" id="cPhoneErr">Please enter a valid 10-digit SA number.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cMessageType">Message Type *</label>
+          <select id="cMessageType" name="messageType">
+            <option value="">— Select a type —</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Compliment">Compliment</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Press / Media">Press / Media</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="field-error" id="cMessageTypeErr">Please select a message type.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="cMessage">Message *</label>
+          <textarea id="cMessage" name="message" placeholder="Type your full message here…" maxlength="2000"></textarea>
+          <span class="field-error" id="cMessageErr">Please enter a message (at least 20 characters).</span>
+          <span style="font-size:0.75rem; color:var(--grey);" id="cCharCount">0 / 2000</span>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%; font-size:0.9rem; padding:14px;" id="cSubmitBtn">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">Cape Threads</div>
+      <p>Cape Town's premium streetwear and sneaker destination.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Aboutus.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contactus.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Hours</h5>
+      <ul>
+        <li><a>Mon–Fri: 08:45–17:00</a></li>
+        <li><a>Sat: 09:00–14:00</a></li>
+        <li><a>Sun: Closed</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Newsletter</h5>
+      <div class="newsletter-form">
+        <input type="text" placeholder="First name" id="nlName">
+        <input type="email" placeholder="Email address" id="nlEmail">
+        <button type="button" onclick="subscribeNewsletter()">Subscribe</button>
+        <p id="nlMsg" style="font-size:0.8rem; color:var(--accent); display:none;">✓ You're subscribed!</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Cape Threads. All rights reserved.</span>
+    <span>V&amp;A Waterfront &amp; Canal Walk, Cape Town</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  document.getElementById('cMessage').addEventListener('input', function() {
+    document.getElementById('cCharCount').textContent = this.value.length + ' / 2000';
+  });
+
+  function setErr(inputId, errId, show) {
+    const input = document.getElementById(inputId);
+    const err = document.getElementById(errId);
+    if (show) { input.classList.add('error-field'); err.classList.add('show'); }
+    else { input.classList.remove('error-field'); err.classList.remove('show'); }
+    return !show;
+  }
+
+  function validateContact() {
+    let valid = true;
+    const name = document.getElementById('cName').value.trim();
+    const email = document.getElementById('cEmail').value.trim();
+    const phone = document.getElementById('cPhone').value.trim();
+    const type = document.getElementById('cMessageType').value;
+    const msg = document.getElementById('cMessage').value.trim();
+
+    if (!setErr('cName', 'cNameErr', name.length < 2)) valid = false;
+    if (!setErr('cEmail', 'cEmailErr', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) valid = false;
+    if (phone && !setErr('cPhone', 'cPhoneErr', !/^0[6-8][0-9]{8}$/.test(phone.replace(/\s/g,'')))) valid = false;
+    if (!setErr('cMessageType', 'cMessageTypeErr', !type)) valid = false;
+    if (!setErr('cMessage', 'cMessageErr', msg.length < 20)) valid = false;
+
+    return valid;
+  }
+
+  ['cName','cEmail','cPhone','cMessageType','cMessage'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('blur', validateContact);
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateContact()) return;
+
+    const btn = document.getElementById('cSubmitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const formData = {
+      to: 'info@capethreads.co.za',
+      from: document.getElementById('cEmail').value.trim(),
+      name: document.getElementById('cName').value.trim(),
+      phone: document.getElementById('cPhone').value.trim() || 'Not provided',
+      type: document.getElementById('cMessageType').value,
+      message: document.getElementById('cMessage').value.trim(),
+      timestamp: new Date().toLocaleString('en-ZA')
+    };
+
+    // Simulate AJAX POST to email handler
+    // In production: replace with fetch('/api/contact', { method:'POST', body: JSON.stringify(formData) })
+    setTimeout(() => {
+      const resp = document.getElementById('formResponse');
+      resp.className = 'form-response success';
+      resp.style.display = 'block';
+      resp.innerHTML = `
+        <strong>✓ Message sent, ${formData.name}!</strong><br>
+        Your <em>${formData.type}</em> message has been compiled and sent to our team at
+        <em>info@capethreads.co.za</em>. We'll reply to <em>${formData.from}</em> shortly.
+      `;
+      document.getElementById('contactForm').reset();
+      document.getElementById('cCharCount').textContent = '0 / 2000';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      resp.scrollIntoView({ behavior: 'smooth' });
+    }, 1200);
+  });
+
+  window.addEventListener('load', () => {
+    const cart = JSON.parse(sessionStorage.getItem('ct_cart') || '[]');
+    document.getElementById('cartCount').textContent = cart.length;
+  });
+
+  function subscribeNewsletter() {
+    const name = document.getElementById('nlName').value.trim();
+    const email = document.getElementById('nlEmail').value.trim();
+    if (!name || !email.includes('@')) { alert('Please enter your name and a valid email.'); return; }
+    document.getElementById('nlMsg').style.display = 'block';
+    document.getElementById('nlName').value = '';
+    document.getElementById('nlEmail').value = '';
+  }
+</script>
 </body>
 </html
